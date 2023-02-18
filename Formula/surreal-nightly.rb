@@ -21,7 +21,7 @@ class SurrealNightly < Formula
   end
 
   service do
-    run [opt_bin/"surreal-nightly", "start", "--user", "root", "--pass", "root", "--log", "debug", "memory"]
+    run [opt_bin/"surreal-nightly", "start", "--user", "root", "--pass", "root", "--log", "debug", "file://#{var}/surreal.db"]
     working_dir var
     keep_alive true
     run_type :immediate
